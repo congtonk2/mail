@@ -1,0 +1,559 @@
+2024-10-13 20:54:04,902 - INFO - BEGIN (implicit)
+2024-10-13 20:54:04,903 - INFO - PRAGMA main.table_info("auth_user")
+2024-10-13 20:54:04,903 - INFO - [raw sql] ()
+2024-10-13 20:54:04,906 - INFO - BEGIN (implicit)
+2024-10-13 20:54:04,906 - INFO - PRAGMA main.table_info("auth_user")
+2024-10-13 20:54:04,907 - INFO - [raw sql] ()
+2024-10-13 20:54:04,909 - INFO - PRAGMA temp.table_info("auth_user")
+2024-10-13 20:54:04,909 - INFO - [raw sql] ()
+2024-10-13 20:54:04,909 - INFO - PRAGMA temp.table_info("auth_user")
+2024-10-13 20:54:04,910 - INFO - [raw sql] ()
+2024-10-13 20:54:04,910 - INFO - PRAGMA main.table_info("auth_role")
+2024-10-13 20:54:04,911 - INFO - [raw sql] ()
+2024-10-13 20:54:04,911 - INFO - PRAGMA main.table_info("auth_role")
+2024-10-13 20:54:04,911 - INFO - [raw sql] ()
+2024-10-13 20:54:04,912 - INFO - PRAGMA temp.table_info("auth_role")
+2024-10-13 20:54:04,912 - INFO - [raw sql] ()
+2024-10-13 20:54:04,912 - INFO - PRAGMA temp.table_info("auth_role")
+2024-10-13 20:54:04,913 - INFO - [raw sql] ()
+2024-10-13 20:54:04,913 - INFO - PRAGMA main.table_info("auth_casbin_rule")
+2024-10-13 20:54:04,913 - INFO - [raw sql] ()
+2024-10-13 20:54:04,914 - INFO - PRAGMA main.table_info("auth_casbin_rule")
+2024-10-13 20:54:04,914 - INFO - [raw sql] ()
+2024-10-13 20:54:04,914 - INFO - PRAGMA temp.table_info("auth_casbin_rule")
+2024-10-13 20:54:04,914 - INFO - [raw sql] ()
+2024-10-13 20:54:04,915 - INFO - PRAGMA temp.table_info("auth_casbin_rule")
+2024-10-13 20:54:04,915 - INFO - [raw sql] ()
+2024-10-13 20:54:04,915 - INFO - PRAGMA main.table_info("auth_login_history")
+2024-10-13 20:54:04,915 - INFO - [raw sql] ()
+2024-10-13 20:54:04,916 - INFO - PRAGMA main.table_info("auth_login_history")
+2024-10-13 20:54:04,916 - INFO - [raw sql] ()
+2024-10-13 20:54:04,916 - INFO - PRAGMA temp.table_info("auth_login_history")
+2024-10-13 20:54:04,917 - INFO - [raw sql] ()
+2024-10-13 20:54:04,917 - INFO - PRAGMA temp.table_info("auth_login_history")
+2024-10-13 20:54:04,917 - INFO - PRAGMA main.table_info("auth_token")
+2024-10-13 20:54:04,918 - INFO - [raw sql] ()
+2024-10-13 20:54:04,918 - INFO - PRAGMA main.table_info("auth_token")
+2024-10-13 20:54:04,919 - INFO - PRAGMA temp.table_info("auth_token")
+2024-10-13 20:54:04,919 - INFO - [raw sql] ()
+2024-10-13 20:54:04,919 - INFO - [raw sql] ()
+2024-10-13 20:54:04,920 - INFO - PRAGMA main.table_info("user")
+2024-10-13 20:54:04,920 - INFO - PRAGMA temp.table_info("auth_token")
+2024-10-13 20:54:04,920 - INFO - [raw sql] ()
+2024-10-13 20:54:04,920 - INFO - [raw sql] ()
+2024-10-13 20:54:04,921 - INFO - PRAGMA temp.table_info("user")
+2024-10-13 20:54:04,921 - INFO - PRAGMA main.table_info("user")
+2024-10-13 20:54:04,921 - INFO - [raw sql] ()
+2024-10-13 20:54:04,921 - INFO - [raw sql] ()
+2024-10-13 20:54:04,922 - INFO - PRAGMA main.table_info("admin")
+2024-10-13 20:54:04,922 - INFO - PRAGMA temp.table_info("user")
+2024-10-13 20:54:04,922 - INFO - [raw sql] ()
+2024-10-13 20:54:04,923 - INFO - [raw sql] ()
+2024-10-13 20:54:04,923 - INFO - PRAGMA temp.table_info("admin")
+2024-10-13 20:54:04,924 - INFO - PRAGMA main.table_info("admin")
+2024-10-13 20:54:04,924 - INFO - [raw sql] ()
+2024-10-13 20:54:04,924 - INFO - [raw sql] ()
+2024-10-13 20:54:04,925 - INFO - PRAGMA temp.table_info("admin")
+2024-10-13 20:54:04,925 - INFO - [raw sql] ()
+2024-10-13 20:54:04,925 - INFO - 
+CREATE TABLE auth_user (
+	email VARCHAR, 
+	password VARCHAR NOT NULL, 
+	username VARCHAR(32) NOT NULL, 
+	delete_time DATETIME, 
+	update_time DATETIME DEFAULT (CURRENT_TIMESTAMP), 
+	create_time DATETIME NOT NULL, 
+	id INTEGER NOT NULL, 
+	is_active BOOLEAN NOT NULL, 
+	nickname VARCHAR(40), 
+	avatar VARCHAR(255), 
+	PRIMARY KEY (id)
+)
+
+
+2024-10-13 20:54:04,927 - INFO - [no key 0.00134s] ()
+2024-10-13 20:54:04,927 - INFO - 
+CREATE TABLE auth_user (
+	email VARCHAR, 
+	password VARCHAR NOT NULL, 
+	username VARCHAR(32) NOT NULL, 
+	delete_time DATETIME, 
+	update_time DATETIME DEFAULT (CURRENT_TIMESTAMP), 
+	create_time DATETIME NOT NULL, 
+	id INTEGER NOT NULL, 
+	is_active BOOLEAN NOT NULL, 
+	nickname VARCHAR(40), 
+	avatar VARCHAR(255), 
+	PRIMARY KEY (id)
+)
+
+
+2024-10-13 20:54:04,929 - INFO - [no key 0.00155s] ()
+2024-10-13 20:54:04,932 - INFO - CREATE INDEX ix_auth_user_email ON auth_user (email)
+2024-10-13 20:54:04,932 - INFO - [no key 0.00026s] ()
+2024-10-13 20:54:04,938 - INFO - CREATE INDEX ix_auth_user_update_time ON auth_user (update_time)
+2024-10-13 20:54:04,939 - INFO - [no key 0.00060s] ()
+2024-10-13 20:54:04,939 - INFO - ROLLBACK
+2024-10-13 20:54:04,942 - INFO - CREATE UNIQUE INDEX ix_auth_user_username ON auth_user (username)
+2024-10-13 20:54:04,943 - INFO - [no key 0.00034s] ()
+2024-10-13 20:54:04,947 - INFO - CREATE INDEX ix_auth_user_create_time ON auth_user (create_time)
+2024-10-13 20:54:04,947 - INFO - [no key 0.00031s] ()
+2024-10-13 20:54:04,952 - INFO - 
+CREATE TABLE auth_role (
+	delete_time DATETIME, 
+	update_time DATETIME DEFAULT (CURRENT_TIMESTAMP), 
+	create_time DATETIME NOT NULL, 
+	id INTEGER NOT NULL, 
+	"key" VARCHAR(40) NOT NULL, 
+	name VARCHAR(40) NOT NULL, 
+	"desc" VARCHAR(400) NOT NULL, 
+	PRIMARY KEY (id)
+)
+
+
+2024-10-13 20:54:04,953 - INFO - [no key 0.00119s] ()
+2024-10-13 20:54:04,958 - INFO - CREATE INDEX ix_auth_role_create_time ON auth_role (create_time)
+2024-10-13 20:54:04,958 - INFO - [no key 0.00031s] ()
+2024-10-13 20:54:04,962 - INFO - CREATE UNIQUE INDEX ix_auth_role_key ON auth_role ("key")
+2024-10-13 20:54:04,963 - INFO - [no key 0.00039s] ()
+2024-10-13 20:54:04,966 - INFO - CREATE INDEX ix_auth_role_update_time ON auth_role (update_time)
+2024-10-13 20:54:04,967 - INFO - [no key 0.00042s] ()
+2024-10-13 20:54:04,971 - INFO - 
+CREATE TABLE auth_casbin_rule (
+	id INTEGER NOT NULL, 
+	ptype VARCHAR NOT NULL, 
+	v0 VARCHAR NOT NULL, 
+	v1 VARCHAR NOT NULL, 
+	v2 VARCHAR, 
+	v3 VARCHAR, 
+	v4 VARCHAR, 
+	v5 VARCHAR, 
+	PRIMARY KEY (id)
+)
+
+
+2024-10-13 20:54:04,972 - INFO - [no key 0.00128s] ()
+2024-10-13 20:54:04,976 - INFO - 
+CREATE TABLE auth_login_history (
+	create_time DATETIME NOT NULL, 
+	id INTEGER NOT NULL, 
+	user_id INTEGER, 
+	login_name VARCHAR(20) NOT NULL, 
+	ip VARCHAR(20) NOT NULL, 
+	ip_info VARCHAR(255) NOT NULL, 
+	client VARCHAR(20) NOT NULL, 
+	user_agent VARCHAR(400) NOT NULL, 
+	login_type VARCHAR(20) NOT NULL, 
+	login_status VARCHAR(20) NOT NULL, 
+	forwarded_for VARCHAR(60) NOT NULL, 
+	PRIMARY KEY (id)
+)
+
+
+2024-10-13 20:54:04,978 - INFO - [no key 0.00155s] ()
+2024-10-13 20:54:04,982 - INFO - CREATE INDEX ix_auth_login_history_create_time ON auth_login_history (create_time)
+2024-10-13 20:54:04,982 - INFO - [no key 0.00035s] ()
+2024-10-13 20:54:04,986 - INFO - 
+CREATE TABLE auth_token (
+	create_time DATETIME NOT NULL, 
+	id INTEGER NOT NULL, 
+	token VARCHAR(48) NOT NULL, 
+	data VARCHAR NOT NULL, 
+	PRIMARY KEY (id)
+)
+
+
+2024-10-13 20:54:04,987 - INFO - [no key 0.00110s] ()
+2024-10-13 20:54:04,992 - INFO - CREATE INDEX ix_auth_token_create_time ON auth_token (create_time)
+2024-10-13 20:54:04,992 - INFO - [no key 0.00040s] ()
+2024-10-13 20:54:04,996 - INFO - CREATE UNIQUE INDEX ix_auth_token_token ON auth_token (token)
+2024-10-13 20:54:04,996 - INFO - [no key 0.00033s] ()
+2024-10-13 20:54:05,000 - INFO - 
+CREATE TABLE user (
+	user_id INTEGER NOT NULL, 
+	username VARCHAR NOT NULL, 
+	password_hash VARCHAR NOT NULL, 
+	created_at VARCHAR, 
+	last_login_at VARCHAR, 
+	last_login_ip VARCHAR, 
+	token VARCHAR, 
+	balance FLOAT NOT NULL, 
+	status VARCHAR NOT NULL, 
+	total_spent FLOAT NOT NULL, 
+	PRIMARY KEY (user_id)
+)
+
+
+2024-10-13 20:54:05,002 - INFO - [no key 0.00145s] ()
+2024-10-13 20:54:05,005 - INFO - CREATE UNIQUE INDEX ix_user_username ON user (username)
+2024-10-13 20:54:05,006 - INFO - [no key 0.00033s] ()
+2024-10-13 20:54:05,010 - INFO - 
+CREATE TABLE admin (
+	id INTEGER NOT NULL, 
+	username VARCHAR NOT NULL, 
+	password_hash VARCHAR NOT NULL, 
+	created_at VARCHAR, 
+	last_login_at VARCHAR, 
+	last_login_ip VARCHAR, 
+	role VARCHAR NOT NULL, 
+	permissions VARCHAR, 
+	PRIMARY KEY (id)
+)
+
+
+2024-10-13 20:54:05,011 - INFO - [no key 0.00133s] ()
+2024-10-13 20:54:05,015 - INFO - CREATE UNIQUE INDEX ix_admin_username ON admin (username)
+2024-10-13 20:54:05,015 - INFO - [no key 0.00038s] ()
+2024-10-13 20:54:05,019 - INFO - COMMIT
+2024-10-13 20:56:20,321 - INFO - BEGIN (implicit)
+2024-10-13 20:56:20,321 - INFO - ROLLBACK
+2024-10-13 20:56:20,774 - INFO - BEGIN (implicit)
+2024-10-13 20:56:20,774 - INFO - ROLLBACK
+2024-10-13 20:57:03,186 - INFO - BEGIN (implicit)
+2024-10-13 20:57:03,186 - INFO - PRAGMA main.table_info("auth_user")
+2024-10-13 20:57:03,187 - INFO - [raw sql] ()
+2024-10-13 20:57:03,188 - INFO - PRAGMA main.table_info("auth_role")
+2024-10-13 20:57:03,189 - INFO - [raw sql] ()
+2024-10-13 20:57:03,190 - INFO - PRAGMA main.table_info("auth_casbin_rule")
+2024-10-13 20:57:03,190 - INFO - [raw sql] ()
+2024-10-13 20:57:03,191 - INFO - PRAGMA main.table_info("auth_login_history")
+2024-10-13 20:57:03,191 - INFO - [raw sql] ()
+2024-10-13 20:57:03,192 - INFO - PRAGMA main.table_info("auth_token")
+2024-10-13 20:57:03,193 - INFO - [raw sql] ()
+2024-10-13 20:57:03,194 - INFO - PRAGMA main.table_info("user")
+2024-10-13 20:57:03,194 - INFO - [raw sql] ()
+2024-10-13 20:57:03,195 - INFO - PRAGMA main.table_info("admin")
+2024-10-13 20:57:03,195 - INFO - [raw sql] ()
+2024-10-13 20:57:03,197 - INFO - COMMIT
+2024-10-13 20:57:03,235 - INFO - BEGIN (implicit)
+2024-10-13 20:57:03,236 - INFO - PRAGMA main.table_info("auth_user")
+2024-10-13 20:57:03,236 - INFO - [raw sql] ()
+2024-10-13 20:57:03,238 - INFO - PRAGMA main.table_info("auth_role")
+2024-10-13 20:57:03,238 - INFO - [raw sql] ()
+2024-10-13 20:57:03,239 - INFO - PRAGMA main.table_info("auth_casbin_rule")
+2024-10-13 20:57:03,239 - INFO - [raw sql] ()
+2024-10-13 20:57:03,240 - INFO - PRAGMA main.table_info("auth_login_history")
+2024-10-13 20:57:03,241 - INFO - [raw sql] ()
+2024-10-13 20:57:03,242 - INFO - PRAGMA main.table_info("auth_token")
+2024-10-13 20:57:03,242 - INFO - [raw sql] ()
+2024-10-13 20:57:03,243 - INFO - PRAGMA main.table_info("user")
+2024-10-13 20:57:03,244 - INFO - [raw sql] ()
+2024-10-13 20:57:03,245 - INFO - PRAGMA main.table_info("admin")
+2024-10-13 20:57:03,245 - INFO - [raw sql] ()
+2024-10-13 20:57:03,246 - INFO - COMMIT
+2024-10-13 20:58:12,552 - INFO - Model:
+2024-10-13 20:58:12,553 - INFO - r.r: sub, obj, act, group
+2024-10-13 20:58:12,553 - INFO - p.p: sub, obj, act, group, eft
+2024-10-13 20:58:12,553 - INFO - e.e: subjectPriority(p_eft) || deny
+2024-10-13 20:58:12,553 - INFO - m.m: (r_sub=="u:root" && p_eft=="allow") || ((g(r_sub, p_sub) && g2(r_obj, p_obj) && keyMatch(r_act,p_act)) && r_group==p_group)
+2024-10-13 20:58:12,553 - INFO - g.g: _, _
+2024-10-13 20:58:12,553 - INFO - g.g2: _, _
+2024-10-13 21:11:18,124 - INFO - BEGIN (implicit)
+2024-10-13 21:11:18,125 - INFO - PRAGMA main.table_info("auth_user")
+2024-10-13 21:11:18,125 - INFO - [raw sql] ()
+2024-10-13 21:11:18,127 - INFO - PRAGMA main.table_info("auth_role")
+2024-10-13 21:11:18,127 - INFO - [raw sql] ()
+2024-10-13 21:11:18,128 - INFO - PRAGMA main.table_info("auth_casbin_rule")
+2024-10-13 21:11:18,129 - INFO - [raw sql] ()
+2024-10-13 21:11:18,130 - INFO - PRAGMA main.table_info("auth_login_history")
+2024-10-13 21:11:18,130 - INFO - [raw sql] ()
+2024-10-13 21:11:18,131 - INFO - PRAGMA main.table_info("auth_token")
+2024-10-13 21:11:18,131 - INFO - [raw sql] ()
+2024-10-13 21:11:18,132 - INFO - PRAGMA main.table_info("user")
+2024-10-13 21:11:18,132 - INFO - [raw sql] ()
+2024-10-13 21:11:18,134 - INFO - PRAGMA main.table_info("admin")
+2024-10-13 21:11:18,134 - INFO - [raw sql] ()
+2024-10-13 21:11:18,136 - INFO - COMMIT
+2024-10-13 21:11:18,390 - INFO - BEGIN (implicit)
+2024-10-13 21:11:18,390 - INFO - PRAGMA main.table_info("auth_user")
+2024-10-13 21:11:18,391 - INFO - [raw sql] ()
+2024-10-13 21:11:18,392 - INFO - PRAGMA main.table_info("auth_role")
+2024-10-13 21:11:18,393 - INFO - [raw sql] ()
+2024-10-13 21:11:18,394 - INFO - PRAGMA main.table_info("auth_casbin_rule")
+2024-10-13 21:11:18,394 - INFO - [raw sql] ()
+2024-10-13 21:11:18,395 - INFO - PRAGMA main.table_info("auth_login_history")
+2024-10-13 21:11:18,396 - INFO - [raw sql] ()
+2024-10-13 21:11:18,397 - INFO - PRAGMA main.table_info("auth_token")
+2024-10-13 21:11:18,397 - INFO - [raw sql] ()
+2024-10-13 21:11:18,398 - INFO - PRAGMA main.table_info("user")
+2024-10-13 21:11:18,399 - INFO - [raw sql] ()
+2024-10-13 21:11:18,400 - INFO - PRAGMA main.table_info("admin")
+2024-10-13 21:11:18,400 - INFO - [raw sql] ()
+2024-10-13 21:11:18,401 - INFO - COMMIT
+2024-10-13 21:15:55,225 - INFO - BEGIN (implicit)
+2024-10-13 21:15:55,225 - INFO - PRAGMA main.table_info("auth_user")
+2024-10-13 21:15:55,226 - INFO - [raw sql] ()
+2024-10-13 21:15:55,227 - INFO - PRAGMA main.table_info("auth_role")
+2024-10-13 21:15:55,228 - INFO - [raw sql] ()
+2024-10-13 21:15:55,229 - INFO - PRAGMA main.table_info("auth_casbin_rule")
+2024-10-13 21:15:55,229 - INFO - [raw sql] ()
+2024-10-13 21:15:55,230 - INFO - PRAGMA main.table_info("auth_login_history")
+2024-10-13 21:15:55,230 - INFO - [raw sql] ()
+2024-10-13 21:15:55,231 - INFO - PRAGMA main.table_info("auth_token")
+2024-10-13 21:15:55,232 - INFO - [raw sql] ()
+2024-10-13 21:15:55,233 - INFO - PRAGMA main.table_info("user")
+2024-10-13 21:15:55,233 - INFO - [raw sql] ()
+2024-10-13 21:15:55,234 - INFO - PRAGMA main.table_info("admin")
+2024-10-13 21:15:55,234 - INFO - [raw sql] ()
+2024-10-13 21:15:55,236 - INFO - COMMIT
+2024-10-13 21:15:55,322 - INFO - BEGIN (implicit)
+2024-10-13 21:15:55,323 - INFO - PRAGMA main.table_info("auth_user")
+2024-10-13 21:15:55,323 - INFO - [raw sql] ()
+2024-10-13 21:15:55,325 - INFO - PRAGMA main.table_info("auth_role")
+2024-10-13 21:15:55,325 - INFO - [raw sql] ()
+2024-10-13 21:15:55,326 - INFO - PRAGMA main.table_info("auth_casbin_rule")
+2024-10-13 21:15:55,327 - INFO - [raw sql] ()
+2024-10-13 21:15:55,328 - INFO - PRAGMA main.table_info("auth_login_history")
+2024-10-13 21:15:55,328 - INFO - [raw sql] ()
+2024-10-13 21:15:55,329 - INFO - PRAGMA main.table_info("auth_token")
+2024-10-13 21:15:55,329 - INFO - [raw sql] ()
+2024-10-13 21:15:55,330 - INFO - PRAGMA main.table_info("user")
+2024-10-13 21:15:55,331 - INFO - [raw sql] ()
+2024-10-13 21:15:55,332 - INFO - PRAGMA main.table_info("admin")
+2024-10-13 21:15:55,332 - INFO - [raw sql] ()
+2024-10-13 21:15:55,333 - INFO - COMMIT
+2024-10-13 21:17:23,012 - INFO - Model:
+2024-10-13 21:17:23,012 - INFO - r.r: sub, obj, act, group
+2024-10-13 21:17:23,012 - INFO - p.p: sub, obj, act, group, eft
+2024-10-13 21:17:23,012 - INFO - e.e: subjectPriority(p_eft) || deny
+2024-10-13 21:17:23,012 - INFO - m.m: (r_sub=="u:root" && p_eft=="allow") || ((g(r_sub, p_sub) && g2(r_obj, p_obj) && keyMatch(r_act,p_act)) && r_group==p_group)
+2024-10-13 21:17:23,012 - INFO - g.g: _, _
+2024-10-13 21:17:23,012 - INFO - g.g2: _, _
+2024-10-13 21:22:33,925 - INFO - BEGIN (implicit)
+2024-10-13 21:22:33,926 - INFO - PRAGMA main.table_info("auth_user")
+2024-10-13 21:22:33,926 - INFO - [raw sql] ()
+2024-10-13 21:22:33,928 - INFO - PRAGMA main.table_info("auth_role")
+2024-10-13 21:22:33,928 - INFO - [raw sql] ()
+2024-10-13 21:22:33,929 - INFO - PRAGMA main.table_info("auth_casbin_rule")
+2024-10-13 21:22:33,930 - INFO - [raw sql] ()
+2024-10-13 21:22:33,931 - INFO - PRAGMA main.table_info("auth_login_history")
+2024-10-13 21:22:33,931 - INFO - [raw sql] ()
+2024-10-13 21:22:33,932 - INFO - PRAGMA main.table_info("auth_token")
+2024-10-13 21:22:33,932 - INFO - [raw sql] ()
+2024-10-13 21:22:33,933 - INFO - PRAGMA main.table_info("user")
+2024-10-13 21:22:33,934 - INFO - [raw sql] ()
+2024-10-13 21:22:33,935 - INFO - PRAGMA main.table_info("admin")
+2024-10-13 21:22:33,935 - INFO - [raw sql] ()
+2024-10-13 21:22:33,936 - INFO - COMMIT
+2024-10-13 21:22:34,001 - INFO - BEGIN (implicit)
+2024-10-13 21:22:34,002 - INFO - PRAGMA main.table_info("auth_user")
+2024-10-13 21:22:34,002 - INFO - [raw sql] ()
+2024-10-13 21:22:34,004 - INFO - PRAGMA main.table_info("auth_role")
+2024-10-13 21:22:34,004 - INFO - [raw sql] ()
+2024-10-13 21:22:34,005 - INFO - PRAGMA main.table_info("auth_casbin_rule")
+2024-10-13 21:22:34,006 - INFO - [raw sql] ()
+2024-10-13 21:22:34,007 - INFO - PRAGMA main.table_info("auth_login_history")
+2024-10-13 21:22:34,007 - INFO - [raw sql] ()
+2024-10-13 21:22:34,008 - INFO - PRAGMA main.table_info("auth_token")
+2024-10-13 21:22:34,009 - INFO - [raw sql] ()
+2024-10-13 21:22:34,009 - INFO - PRAGMA main.table_info("user")
+2024-10-13 21:22:34,010 - INFO - [raw sql] ()
+2024-10-13 21:22:34,011 - INFO - PRAGMA main.table_info("admin")
+2024-10-13 21:22:34,011 - INFO - [raw sql] ()
+2024-10-13 21:22:34,012 - INFO - COMMIT
+2024-10-13 21:22:40,186 - INFO - Model:
+2024-10-13 21:22:40,186 - INFO - r.r: sub, obj, act, group
+2024-10-13 21:22:40,186 - INFO - p.p: sub, obj, act, group, eft
+2024-10-13 21:22:40,186 - INFO - e.e: subjectPriority(p_eft) || deny
+2024-10-13 21:22:40,186 - INFO - m.m: (r_sub=="u:root" && p_eft=="allow") || ((g(r_sub, p_sub) && g2(r_obj, p_obj) && keyMatch(r_act,p_act)) && r_group==p_group)
+2024-10-13 21:22:40,186 - INFO - g.g: _, _
+2024-10-13 21:22:40,186 - INFO - g.g2: _, _
+2024-10-13 21:28:38,496 - INFO - BEGIN (implicit)
+2024-10-13 21:28:38,496 - INFO - PRAGMA main.table_info("auth_user")
+2024-10-13 21:28:38,496 - INFO - [raw sql] ()
+2024-10-13 21:28:38,498 - INFO - PRAGMA main.table_info("auth_role")
+2024-10-13 21:28:38,498 - INFO - [raw sql] ()
+2024-10-13 21:28:38,500 - INFO - PRAGMA main.table_info("auth_casbin_rule")
+2024-10-13 21:28:38,500 - INFO - [raw sql] ()
+2024-10-13 21:28:38,501 - INFO - PRAGMA main.table_info("auth_login_history")
+2024-10-13 21:28:38,501 - INFO - [raw sql] ()
+2024-10-13 21:28:38,502 - INFO - PRAGMA main.table_info("auth_token")
+2024-10-13 21:28:38,503 - INFO - [raw sql] ()
+2024-10-13 21:28:38,504 - INFO - PRAGMA main.table_info("user")
+2024-10-13 21:28:38,504 - INFO - [raw sql] ()
+2024-10-13 21:28:38,505 - INFO - PRAGMA main.table_info("admin")
+2024-10-13 21:28:38,506 - INFO - [raw sql] ()
+2024-10-13 21:28:38,507 - INFO - COMMIT
+2024-10-13 21:28:38,537 - INFO - BEGIN (implicit)
+2024-10-13 21:28:38,537 - INFO - PRAGMA main.table_info("auth_user")
+2024-10-13 21:28:38,537 - INFO - [raw sql] ()
+2024-10-13 21:28:38,539 - INFO - PRAGMA main.table_info("auth_role")
+2024-10-13 21:28:38,539 - INFO - [raw sql] ()
+2024-10-13 21:28:38,541 - INFO - PRAGMA main.table_info("auth_casbin_rule")
+2024-10-13 21:28:38,541 - INFO - [raw sql] ()
+2024-10-13 21:28:38,542 - INFO - PRAGMA main.table_info("auth_login_history")
+2024-10-13 21:28:38,542 - INFO - [raw sql] ()
+2024-10-13 21:28:38,543 - INFO - PRAGMA main.table_info("auth_token")
+2024-10-13 21:28:38,544 - INFO - [raw sql] ()
+2024-10-13 21:28:38,545 - INFO - PRAGMA main.table_info("user")
+2024-10-13 21:28:38,545 - INFO - [raw sql] ()
+2024-10-13 21:28:38,546 - INFO - PRAGMA main.table_info("admin")
+2024-10-13 21:28:38,546 - INFO - [raw sql] ()
+2024-10-13 21:28:38,547 - INFO - COMMIT
+2024-10-13 21:31:11,300 - INFO - BEGIN (implicit)
+2024-10-13 21:31:11,300 - INFO - PRAGMA main.table_info("auth_user")
+2024-10-13 21:31:11,301 - INFO - [raw sql] ()
+2024-10-13 21:31:11,303 - INFO - PRAGMA main.table_info("auth_role")
+2024-10-13 21:31:11,303 - INFO - [raw sql] ()
+2024-10-13 21:31:11,304 - INFO - PRAGMA main.table_info("auth_casbin_rule")
+2024-10-13 21:31:11,304 - INFO - [raw sql] ()
+2024-10-13 21:31:11,305 - INFO - PRAGMA main.table_info("auth_login_history")
+2024-10-13 21:31:11,306 - INFO - [raw sql] ()
+2024-10-13 21:31:11,307 - INFO - PRAGMA main.table_info("auth_token")
+2024-10-13 21:31:11,307 - INFO - [raw sql] ()
+2024-10-13 21:31:11,308 - INFO - PRAGMA main.table_info("user")
+2024-10-13 21:31:11,308 - INFO - [raw sql] ()
+2024-10-13 21:31:11,309 - INFO - PRAGMA main.table_info("admin")
+2024-10-13 21:31:11,310 - INFO - [raw sql] ()
+2024-10-13 21:31:11,311 - INFO - COMMIT
+2024-10-13 21:31:11,368 - INFO - BEGIN (implicit)
+2024-10-13 21:31:11,370 - INFO - PRAGMA main.table_info("auth_user")
+2024-10-13 21:31:11,370 - INFO - [raw sql] ()
+2024-10-13 21:31:11,372 - INFO - PRAGMA main.table_info("auth_role")
+2024-10-13 21:31:11,372 - INFO - [raw sql] ()
+2024-10-13 21:31:11,373 - INFO - PRAGMA main.table_info("auth_casbin_rule")
+2024-10-13 21:31:11,373 - INFO - [raw sql] ()
+2024-10-13 21:31:11,375 - INFO - PRAGMA main.table_info("auth_login_history")
+2024-10-13 21:31:11,375 - INFO - [raw sql] ()
+2024-10-13 21:31:11,376 - INFO - PRAGMA main.table_info("auth_token")
+2024-10-13 21:31:11,376 - INFO - [raw sql] ()
+2024-10-13 21:31:11,377 - INFO - PRAGMA main.table_info("user")
+2024-10-13 21:31:11,378 - INFO - [raw sql] ()
+2024-10-13 21:31:11,379 - INFO - PRAGMA main.table_info("admin")
+2024-10-13 21:31:11,379 - INFO - [raw sql] ()
+2024-10-13 21:31:11,380 - INFO - COMMIT
+2024-10-13 21:34:16,181 - INFO - BEGIN (implicit)
+2024-10-13 21:34:16,181 - INFO - PRAGMA main.table_info("auth_user")
+2024-10-13 21:34:16,182 - INFO - [raw sql] ()
+2024-10-13 21:34:16,183 - INFO - BEGIN (implicit)
+2024-10-13 21:34:16,183 - INFO - PRAGMA main.table_info("auth_role")
+2024-10-13 21:34:16,183 - INFO - PRAGMA main.table_info("auth_user")
+2024-10-13 21:34:16,184 - INFO - [raw sql] ()
+2024-10-13 21:34:16,184 - INFO - [raw sql] ()
+2024-10-13 21:34:16,185 - INFO - PRAGMA main.table_info("auth_casbin_rule")
+2024-10-13 21:34:16,185 - INFO - [raw sql] ()
+2024-10-13 21:34:16,185 - INFO - PRAGMA main.table_info("auth_role")
+2024-10-13 21:34:16,186 - INFO - [raw sql] ()
+2024-10-13 21:34:16,186 - INFO - PRAGMA main.table_info("auth_login_history")
+2024-10-13 21:34:16,186 - INFO - [raw sql] ()
+2024-10-13 21:34:16,187 - INFO - PRAGMA main.table_info("auth_casbin_rule")
+2024-10-13 21:34:16,187 - INFO - [raw sql] ()
+2024-10-13 21:34:16,187 - INFO - PRAGMA main.table_info("auth_token")
+2024-10-13 21:34:16,188 - INFO - [raw sql] ()
+2024-10-13 21:34:16,188 - INFO - PRAGMA main.table_info("auth_login_history")
+2024-10-13 21:34:16,189 - INFO - PRAGMA main.table_info("user")
+2024-10-13 21:34:16,189 - INFO - [raw sql] ()
+2024-10-13 21:34:16,189 - INFO - [raw sql] ()
+2024-10-13 21:34:16,190 - INFO - PRAGMA main.table_info("auth_token")
+2024-10-13 21:34:16,190 - INFO - PRAGMA main.table_info("admin")
+2024-10-13 21:34:16,190 - INFO - [raw sql] ()
+2024-10-13 21:34:16,190 - INFO - [raw sql] ()
+2024-10-13 21:34:16,191 - INFO - COMMIT
+2024-10-13 21:34:16,195 - INFO - PRAGMA main.table_info("user")
+2024-10-13 21:34:16,196 - INFO - [raw sql] ()
+2024-10-13 21:34:16,197 - INFO - PRAGMA main.table_info("admin")
+2024-10-13 21:34:16,197 - INFO - [raw sql] ()
+2024-10-13 21:34:16,198 - INFO - COMMIT
+2024-10-13 21:34:21,428 - INFO - Model:
+2024-10-13 21:34:21,428 - INFO - r.r: sub, obj, act, group
+2024-10-13 21:34:21,428 - INFO - p.p: sub, obj, act, group, eft
+2024-10-13 21:34:21,428 - INFO - e.e: subjectPriority(p_eft) || deny
+2024-10-13 21:34:21,428 - INFO - m.m: (r_sub=="u:root" && p_eft=="allow") || ((g(r_sub, p_sub) && g2(r_obj, p_obj) && keyMatch(r_act,p_act)) && r_group==p_group)
+2024-10-13 21:34:21,428 - INFO - g.g: _, _
+2024-10-13 21:34:21,428 - INFO - g.g2: _, _
+2024-10-13 21:38:33,388 - INFO - BEGIN (implicit)
+2024-10-13 21:38:33,389 - INFO - PRAGMA main.table_info("auth_user")
+2024-10-13 21:38:33,389 - INFO - [raw sql] ()
+2024-10-13 21:38:33,391 - INFO - PRAGMA main.table_info("auth_role")
+2024-10-13 21:38:33,391 - INFO - [raw sql] ()
+2024-10-13 21:38:33,393 - INFO - PRAGMA main.table_info("auth_casbin_rule")
+2024-10-13 21:38:33,393 - INFO - [raw sql] ()
+2024-10-13 21:38:33,394 - INFO - PRAGMA main.table_info("auth_login_history")
+2024-10-13 21:38:33,394 - INFO - [raw sql] ()
+2024-10-13 21:38:33,395 - INFO - PRAGMA main.table_info("auth_token")
+2024-10-13 21:38:33,396 - INFO - [raw sql] ()
+2024-10-13 21:38:33,397 - INFO - PRAGMA main.table_info("user")
+2024-10-13 21:38:33,397 - INFO - [raw sql] ()
+2024-10-13 21:38:33,398 - INFO - PRAGMA main.table_info("admin")
+2024-10-13 21:38:33,398 - INFO - [raw sql] ()
+2024-10-13 21:38:33,401 - INFO - COMMIT
+2024-10-13 21:38:33,402 - INFO - BEGIN (implicit)
+2024-10-13 21:38:33,402 - INFO - PRAGMA main.table_info("auth_user")
+2024-10-13 21:38:33,402 - INFO - [raw sql] ()
+2024-10-13 21:38:33,404 - INFO - PRAGMA main.table_info("auth_role")
+2024-10-13 21:38:33,404 - INFO - [raw sql] ()
+2024-10-13 21:38:33,406 - INFO - PRAGMA main.table_info("auth_casbin_rule")
+2024-10-13 21:38:33,406 - INFO - [raw sql] ()
+2024-10-13 21:38:33,407 - INFO - PRAGMA main.table_info("auth_login_history")
+2024-10-13 21:38:33,407 - INFO - [raw sql] ()
+2024-10-13 21:38:33,408 - INFO - PRAGMA main.table_info("auth_token")
+2024-10-13 21:38:33,409 - INFO - [raw sql] ()
+2024-10-13 21:38:33,410 - INFO - PRAGMA main.table_info("user")
+2024-10-13 21:38:33,410 - INFO - [raw sql] ()
+2024-10-13 21:38:33,411 - INFO - PRAGMA main.table_info("admin")
+2024-10-13 21:38:33,411 - INFO - [raw sql] ()
+2024-10-13 21:38:33,413 - INFO - COMMIT
+2024-10-13 21:39:52,228 - INFO - BEGIN (implicit)
+2024-10-13 21:39:52,229 - INFO - PRAGMA main.table_info("auth_user")
+2024-10-13 21:39:52,229 - INFO - [raw sql] ()
+2024-10-13 21:39:52,231 - INFO - PRAGMA main.table_info("auth_role")
+2024-10-13 21:39:52,231 - INFO - [raw sql] ()
+2024-10-13 21:39:52,232 - INFO - PRAGMA main.table_info("auth_casbin_rule")
+2024-10-13 21:39:52,232 - INFO - [raw sql] ()
+2024-10-13 21:39:52,233 - INFO - PRAGMA main.table_info("auth_login_history")
+2024-10-13 21:39:52,234 - INFO - [raw sql] ()
+2024-10-13 21:39:52,235 - INFO - PRAGMA main.table_info("auth_token")
+2024-10-13 21:39:52,235 - INFO - [raw sql] ()
+2024-10-13 21:39:52,236 - INFO - PRAGMA main.table_info("user")
+2024-10-13 21:39:52,236 - INFO - [raw sql] ()
+2024-10-13 21:39:52,237 - INFO - PRAGMA main.table_info("admin")
+2024-10-13 21:39:52,237 - INFO - [raw sql] ()
+2024-10-13 21:39:52,239 - INFO - COMMIT
+2024-10-13 21:39:52,284 - INFO - BEGIN (implicit)
+2024-10-13 21:39:52,284 - INFO - PRAGMA main.table_info("auth_user")
+2024-10-13 21:39:52,285 - INFO - [raw sql] ()
+2024-10-13 21:39:52,286 - INFO - PRAGMA main.table_info("auth_role")
+2024-10-13 21:39:52,287 - INFO - [raw sql] ()
+2024-10-13 21:39:52,287 - INFO - PRAGMA main.table_info("auth_casbin_rule")
+2024-10-13 21:39:52,288 - INFO - [raw sql] ()
+2024-10-13 21:39:52,289 - INFO - PRAGMA main.table_info("auth_login_history")
+2024-10-13 21:39:52,289 - INFO - [raw sql] ()
+2024-10-13 21:39:52,290 - INFO - PRAGMA main.table_info("auth_token")
+2024-10-13 21:39:52,291 - INFO - [raw sql] ()
+2024-10-13 21:39:52,292 - INFO - PRAGMA main.table_info("user")
+2024-10-13 21:39:52,292 - INFO - [raw sql] ()
+2024-10-13 21:39:52,293 - INFO - PRAGMA main.table_info("admin")
+2024-10-13 21:39:52,293 - INFO - [raw sql] ()
+2024-10-13 21:39:52,295 - INFO - COMMIT
+2024-10-13 21:45:34,143 - INFO - BEGIN (implicit)
+2024-10-13 21:45:34,144 - INFO - PRAGMA main.table_info("auth_user")
+2024-10-13 21:45:34,144 - INFO - [raw sql] ()
+2024-10-13 21:45:34,146 - INFO - PRAGMA main.table_info("auth_role")
+2024-10-13 21:45:34,146 - INFO - [raw sql] ()
+2024-10-13 21:45:34,147 - INFO - PRAGMA main.table_info("auth_casbin_rule")
+2024-10-13 21:45:34,148 - INFO - [raw sql] ()
+2024-10-13 21:45:34,149 - INFO - PRAGMA main.table_info("auth_login_history")
+2024-10-13 21:45:34,149 - INFO - [raw sql] ()
+2024-10-13 21:45:34,150 - INFO - PRAGMA main.table_info("auth_token")
+2024-10-13 21:45:34,150 - INFO - [raw sql] ()
+2024-10-13 21:45:34,151 - INFO - PRAGMA main.table_info("user")
+2024-10-13 21:45:34,152 - INFO - [raw sql] ()
+2024-10-13 21:45:34,153 - INFO - PRAGMA main.table_info("admin")
+2024-10-13 21:45:34,153 - INFO - [raw sql] ()
+2024-10-13 21:45:34,154 - INFO - COMMIT
+2024-10-13 21:45:34,195 - INFO - BEGIN (implicit)
+2024-10-13 21:45:34,195 - INFO - PRAGMA main.table_info("auth_user")
+2024-10-13 21:45:34,196 - INFO - [raw sql] ()
+2024-10-13 21:45:34,198 - INFO - PRAGMA main.table_info("auth_role")
+2024-10-13 21:45:34,198 - INFO - [raw sql] ()
+2024-10-13 21:45:34,199 - INFO - PRAGMA main.table_info("auth_casbin_rule")
+2024-10-13 21:45:34,199 - INFO - [raw sql] ()
+2024-10-13 21:45:34,200 - INFO - PRAGMA main.table_info("auth_login_history")
+2024-10-13 21:45:34,200 - INFO - [raw sql] ()
+2024-10-13 21:45:34,201 - INFO - PRAGMA main.table_info("auth_token")
+2024-10-13 21:45:34,202 - INFO - [raw sql] ()
+2024-10-13 21:45:34,203 - INFO - PRAGMA main.table_info("user")
+2024-10-13 21:45:34,203 - INFO - [raw sql] ()
+2024-10-13 21:45:34,204 - INFO - PRAGMA main.table_info("admin")
+2024-10-13 21:45:34,205 - INFO - [raw sql] ()
+2024-10-13 21:45:34,206 - INFO - COMMIT
