@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8"/>
+    <title>${site_title}</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport"/>
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible"/>
+    <link href="${site_icon}" rel="shortcut icon" type="image/x-icon"/>
+    <link href="${cdn}/${pkg}/sdk/sdk.css" rel="stylesheet" title="default"/>
+    <link href="${cdn}/${pkg}/sdk/helper.css" rel="stylesheet"/>
+    <link href="${cdn}/${pkg}/sdk/iconfont.css" rel="stylesheet"/>
+    ${theme_css}
+    <script src="${cdn}/${pkg}/sdk/sdk.js"></script>
+    <script src="${cdn}/vue@2.7.14/dist/vue.min.js"></script>
+    <script src="${cdn}/history@5.3.0/umd/history.production.min.js"></script>
+    <style>
+        html, body,
+        .app-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        /*DropDownButton组件下拉菜单样式修改*/
+        .amis-scope .cxd-DropDown-menu {
+            min-width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="app-wrapper" id="root"></div>
+<script>
+    (async function () {
+        let amis = amisRequire('amis/embed');
+        const history = HistoryLibrary.createHashHistory();
+
+        // 获取当前用户的菜单配置
+        let response = await fetch("/menu_config");
+        let menuConfig = await response.json();
+
+        let amisInstance = amis.embed(
+            '#root',
+            menuConfig,  // 使用从后端获取的菜单配置
+            {location: history.location, locale: "zh"},
+            {
+                updateLocation: (location, replace) => {
+                    location = normalizeLink(location);
+                    if (location === 'goBack') {
+                        return history.goBack();
+                    } else if (/^https?\:\/\//.test(location) || !history) {
+                        return (window.location.href = location);
+                    }
+
+                    history[replace ? 'replace' : 'push'](location);
+                },
+                jumpTo: (to, action) => {
+                    if (to === 'goBack') {
+                        return history.goBack();
+                    }
+
+                    if (action && action.actionType === 'url') {
+                        action.blank === false
+                            ? (window.location.href = to)
+                            : window.open(to, '_blank');
+                        return;
+                    }
+
+                    if (/^https?:\/\//.test(to)) {
+                        window.location.href = to;
+                    } else {
+                        history.push(to);
+                    }
+                },
+                isCurrentUrl: (to) => {
+                    const pathname = history.location.pathname;
+                    const link = normalizeLink(to, {
+                        ...location,
+                        pathname,
+                        hash: ''
+                    });
+                    return decodeURI(pathname) === link;
+                },
+                theme: "cxd"
+            }
+        );
+
+        history.listen(state => {
+            amisInstance.updateProps({
+                location: state.location || state,
+                locale: "zh"
+            });
+        });
+    })();
+</script>
+</body>
+</html>
